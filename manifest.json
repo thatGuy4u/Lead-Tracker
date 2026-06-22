@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "2.0",
+    "version": "1.0.0",
     "name": "Lead Tracker",
     "description": "Save, organize, and manage your leads with a beautiful modern interface. Capture the current tab or add URLs manually.",
     "permissions": ["tabs", "activeTab"],
