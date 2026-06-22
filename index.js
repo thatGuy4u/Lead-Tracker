@@ -262,7 +262,7 @@ function renderLeads() {
                         <input class="edit-input" id="edit-title-${lead.id}" type="text" value="${escapeHtml(lead.title)}" placeholder="Lead name">
                         <div class="edit-actions">
                             <button class="lead-action-btn" data-action="save" data-id="${lead.id}" title="Save">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue-bright)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </button>
                             <button class="lead-action-btn" data-action="cancel" title="Cancel">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>

@@ -1,39 +1,64 @@
 /* ============================================
    Lead Tracker — Black & Blue Neon Glass Theme
+   (Enhanced visibility & distinguishability)
    ============================================ */
 
 /* ---- CSS Variables ---- */
 :root {
     --bg-primary: #050510;
-    --bg-secondary: #0a0a1a;
-    --bg-card: rgba(8, 8, 24, 0.85);
-    --bg-glass: rgba(10, 14, 30, 0.6);
-    --bg-glass-hover: rgba(15, 20, 45, 0.7);
-    --border-subtle: rgba(0, 100, 255, 0.12);
-    --border-hover: rgba(0, 120, 255, 0.3);
-    --border-glow: rgba(0, 120, 255, 0.5);
-    --text-primary: #e4e8f7;
-    --text-secondary: #8090b8;
-    --text-muted: #4a5680;
-    --accent: #00d0ff;
-    --accent-light: #00d0ff;
-    --accent-secondary: #00d0ff;
-    --accent-glow: rgba(0, 120, 255, 0.12);
-    --accent-glow-strong: rgba(0, 120, 255, 0.25);
-    --neon-glow: 0 0 8px rgba(0, 120, 255, 0.4), 0 0 20px rgba(0, 120, 255, 0.15);
-    --neon-glow-strong: 0 0 10px rgba(0, 120, 255, 0.5), 0 0 30px rgba(0, 120, 255, 0.2), 0 0 60px rgba(0, 120, 255, 0.1);
+    --bg-secondary: #0c0c20;
+    --bg-card: rgba(10, 12, 30, 0.9);
+    --bg-glass: rgba(12, 16, 36, 0.65);
+    --bg-glass-hover: rgba(18, 24, 52, 0.8);
+    --bg-input: rgba(10, 14, 32, 0.75);
+
+    /* Borders — significantly more visible */
+    --border-subtle: rgba(60, 120, 220, 0.22);
+    --border-default: rgba(60, 130, 255, 0.32);
+    --border-hover: rgba(60, 140, 255, 0.48);
+    --border-glow: rgba(60, 150, 255, 0.65);
+
+    /* Text — brighter for readability */
+    --text-primary: #eaecf5;
+    --text-secondary: #96a4c4;
+    --text-muted: #5a6a90;
+
+    /* Accent colors — differentiated */
+    --accent-blue: #3b9eff;
+    --accent-blue-bright: #5ab4ff;
+    --accent-teal: #00d4aa;
+    --accent-teal-bright: #2aecc4;
+    --accent-cyan: #00d0ff;
+
+    /* Glow effects */
+    --accent-glow: rgba(59, 158, 255, 0.14);
+    --accent-glow-strong: rgba(59, 158, 255, 0.28);
+    --neon-glow: 0 0 8px rgba(59, 158, 255, 0.35), 0 0 20px rgba(59, 158, 255, 0.12);
+    --neon-glow-strong: 0 0 12px rgba(59, 158, 255, 0.5), 0 0 30px rgba(59, 158, 255, 0.18), 0 0 60px rgba(59, 158, 255, 0.08);
+    --teal-glow: 0 0 8px rgba(0, 212, 170, 0.35), 0 0 20px rgba(0, 212, 170, 0.12);
+    --teal-glow-strong: 0 0 12px rgba(0, 212, 170, 0.5), 0 0 30px rgba(0, 212, 170, 0.18);
+
+    /* Semantic colors */
     --danger: #f87171;
-    --danger-glow: rgba(248, 113, 113, 0.12);
+    --danger-bg: rgba(248, 80, 80, 0.12);
+    --danger-border: rgba(248, 113, 113, 0.4);
+    --danger-glow: rgba(248, 113, 113, 0.15);
     --warning: #fbbf24;
     --success: #34d399;
+
+    /* Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 20px;
     --radius-full: 50px;
+
+    /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+    /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.25s ease;
     --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,7 +79,7 @@ body {
     padding: 20px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--bg-primary);
-    background-image: radial-gradient(ellipse at 50% 0%, rgba(0, 80, 200, 0.08) 0%, transparent 60%);
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(30, 80, 200, 0.1) 0%, transparent 60%);
     color: var(--text-primary);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -68,11 +93,11 @@ body::-webkit-scrollbar-track {
     background: transparent;
 }
 body::-webkit-scrollbar-thumb {
-    background: rgba(0, 120, 255, 0.2);
+    background: rgba(59, 158, 255, 0.25);
     border-radius: 10px;
 }
 body::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 120, 255, 0.35);
+    background: rgba(59, 158, 255, 0.4);
 }
 
 /* ---- Header ---- */
@@ -93,26 +118,26 @@ body::-webkit-scrollbar-thumb:hover {
 .header-title {
     font-size: 1.3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-light), var(--accent));
+    background: linear-gradient(135deg, #5ab4ff, #00d0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.3px;
-    filter: drop-shadow(0 0 8px rgba(0, 120, 255, 0.3));
+    filter: drop-shadow(0 0 10px rgba(59, 158, 255, 0.35));
 }
 
 .lead-count-badge {
-    background: var(--accent-glow);
-    color: var(--accent-light);
+    background: rgba(59, 158, 255, 0.15);
+    color: var(--accent-blue-bright);
     font-size: 0.7rem;
     font-weight: 700;
     padding: 3px 10px;
     border-radius: var(--radius-full);
-    border: 1px solid rgba(0, 120, 255, 0.25);
+    border: 1.5px solid rgba(59, 158, 255, 0.35);
     letter-spacing: 0.5px;
     min-width: 28px;
     text-align: center;
-    box-shadow: 0 0 8px rgba(0, 120, 255, 0.1);
+    box-shadow: 0 0 10px rgba(59, 158, 255, 0.12);
 }
 
 /* ---- Search ---- */
@@ -140,8 +165,8 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 0.85rem;
     font-family: inherit;
     color: var(--text-primary);
-    background: var(--bg-glass);
-    border: 1px solid var(--border-hover);
+    background: var(--bg-input);
+    border: 1.5px solid var(--border-default);
     border-radius: var(--radius-md);
     outline: none;
     transition: all var(--transition-normal);
@@ -149,14 +174,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .search-input:focus {
-    border-color: var(--border-glow);
+    border-color: var(--accent-blue);
     background: var(--bg-glass-hover);
     box-shadow: var(--neon-glow);
 }
 
 .search-input:focus + .search-icon,
 .search-wrapper:focus-within .search-icon {
-    color: var(--accent-light);
+    color: var(--accent-blue-bright);
 }
 
 .search-input::placeholder {
@@ -175,8 +200,8 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 0.88rem;
     font-family: inherit;
     color: var(--text-primary);
-    background: var(--bg-glass);
-    border: 1px solid var(--border-hover);
+    background: var(--bg-input);
+    border: 1.5px solid var(--border-default);
     border-radius: var(--radius-md);
     outline: none;
     transition: all var(--transition-normal);
@@ -186,7 +211,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .name-input:focus,
 .url-input:focus {
-    border-color: var(--border-glow);
+    border-color: var(--accent-blue);
     background: var(--bg-glass-hover);
     box-shadow: var(--neon-glow);
 }
@@ -201,12 +226,12 @@ body::-webkit-scrollbar-thumb:hover {
     gap: 8px;
 }
 
-/* ---- Buttons (Neon Glass Style) ---- */
+/* ---- Buttons (Enhanced Visibility) ---- */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     padding: 10px 18px;
     font-size: 0.82rem;
     font-weight: 600;
@@ -226,31 +251,54 @@ body::-webkit-scrollbar-thumb:hover {
     flex-shrink: 0;
 }
 
+/* ---- PRIMARY BUTTON: "Save Lead" — solid blue gradient, unmistakable ---- */
 .btn-primary {
     flex: 1;
-    background: var(--bg-glass);
-    color: var(--accent-light);
-    border: 1.5px solid var(--border-hover);
-    box-shadow: var(--neon-glow);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(37, 99, 235, 0.45));
+    color: #fff;
+    border: 1.5px solid rgba(59, 158, 255, 0.5);
+    box-shadow: var(--neon-glow), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
 }
 
 .btn-primary:hover {
-    border-color: var(--border-glow);
-    box-shadow: var(--neon-glow-strong);
-    background: var(--bg-glass-hover);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(37, 99, 235, 0.6));
+    border-color: rgba(59, 158, 255, 0.7);
+    box-shadow: var(--neon-glow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
 }
 
 .btn-primary:active {
-    box-shadow: 0 0 5px rgba(0, 120, 255, 0.3);
+    transform: translateY(0);
+    box-shadow: 0 0 5px rgba(59, 158, 255, 0.3);
 }
 
+/* ---- "Save Current Tab" button — teal/green gradient to differentiate ---- */
+#tab-btn.btn-primary {
+    background: linear-gradient(135deg, rgba(0, 180, 140, 0.35), rgba(0, 150, 120, 0.45));
+    color: #fff;
+    border: 1.5px solid rgba(0, 212, 170, 0.5);
+    box-shadow: var(--teal-glow), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+#tab-btn.btn-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 180, 140, 0.5), rgba(0, 150, 120, 0.6));
+    border-color: rgba(0, 212, 170, 0.7);
+    box-shadow: var(--teal-glow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+#tab-btn.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 0 5px rgba(0, 212, 170, 0.3);
+}
+
+/* ---- ACCENT BUTTON ---- */
 .btn-accent {
     flex: 1;
     background: var(--bg-glass);
-    color: var(--accent-light);
-    border: 1.5px solid var(--border-subtle);
+    color: var(--accent-blue-bright);
+    border: 1.5px solid var(--border-default);
     backdrop-filter: blur(12px);
 }
 
@@ -262,49 +310,67 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .btn-accent:active {
-    box-shadow: 0 0 5px rgba(0, 120, 255, 0.2);
+    box-shadow: 0 0 5px rgba(59, 158, 255, 0.2);
 }
 
+/* ---- GHOST BUTTON: Export — clearly bordered and labeled ---- */
 .btn-ghost {
-    background: var(--bg-glass);
+    background: rgba(12, 16, 36, 0.5);
     color: var(--text-secondary);
-    border: 1px solid var(--border-subtle);
+    border: 1.5px solid var(--border-default);
     backdrop-filter: blur(12px);
 }
 
 .btn-ghost:hover {
     background: var(--bg-glass-hover);
-    color: var(--text-primary);
+    color: var(--accent-blue-bright);
     border-color: var(--border-hover);
     box-shadow: var(--neon-glow);
+    transform: translateY(-1px);
 }
 
+.btn-ghost:active {
+    transform: translateY(0);
+}
+
+/* ---- DANGER GHOST BUTTON: Delete All — visibly red-tinted ---- */
 .btn-danger-ghost {
-    background: var(--bg-glass);
-    color: var(--text-secondary);
-    border: 1px solid var(--border-subtle);
+    background: rgba(248, 60, 60, 0.06);
+    color: var(--danger);
+    border: 1.5px solid rgba(248, 113, 113, 0.3);
     backdrop-filter: blur(12px);
 }
 
 .btn-danger-ghost:hover {
-    background: rgba(248, 50, 50, 0.08);
-    color: var(--danger);
-    border-color: rgba(248, 113, 113, 0.35);
-    box-shadow: 0 0 8px rgba(248, 113, 113, 0.2), 0 0 20px rgba(248, 113, 113, 0.08);
+    background: rgba(248, 50, 50, 0.14);
+    color: #ff8a8a;
+    border-color: rgba(248, 113, 113, 0.55);
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.25), 0 0 24px rgba(248, 113, 113, 0.1);
+    transform: translateY(-1px);
 }
 
+.btn-danger-ghost:active {
+    transform: translateY(0);
+}
+
+/* ---- DANGER BUTTON: in Modal ---- */
 .btn-danger {
-    background: var(--bg-glass);
-    color: var(--danger);
-    border: 1.5px solid rgba(248, 113, 113, 0.35);
-    box-shadow: 0 0 8px rgba(248, 113, 113, 0.2), 0 0 20px rgba(248, 113, 113, 0.08);
+    background: linear-gradient(135deg, rgba(220, 50, 50, 0.35), rgba(200, 40, 40, 0.45));
+    color: #fff;
+    border: 1.5px solid rgba(248, 113, 113, 0.55);
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.25), 0 0 24px rgba(248, 113, 113, 0.1);
     backdrop-filter: blur(12px);
 }
 
 .btn-danger:hover {
-    border-color: rgba(248, 113, 113, 0.5);
-    box-shadow: 0 0 10px rgba(248, 113, 113, 0.3), 0 0 30px rgba(248, 113, 113, 0.12);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(220, 50, 50, 0.5), rgba(200, 40, 40, 0.6));
+    border-color: rgba(248, 113, 113, 0.7);
+    box-shadow: 0 0 14px rgba(248, 113, 113, 0.35), 0 0 30px rgba(248, 113, 113, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn-danger:active {
+    transform: translateY(0);
 }
 
 /* ---- Divider ---- */
@@ -332,21 +398,30 @@ body::-webkit-scrollbar-thumb:hover {
     background: transparent;
 }
 .lead-list::-webkit-scrollbar-thumb {
-    background: rgba(0, 120, 255, 0.12);
+    background: rgba(59, 158, 255, 0.16);
     border-radius: 10px;
 }
 
-/* ---- Lead Item ---- */
+/* ---- Lead Item — clearly visible card with left accent ---- */
 .lead-item {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 14px;
     background: var(--bg-glass);
-    border: 1px solid var(--border-subtle);
+    border: 1.5px solid var(--border-default);
+    border-left: 3px solid rgba(59, 158, 255, 0.45);
     border-radius: var(--radius-md);
     animation: slideUp 0.3s ease;
     backdrop-filter: blur(12px);
+    transition: all var(--transition-normal);
+}
+
+.lead-item:hover {
+    border-color: var(--border-hover);
+    border-left-color: var(--accent-blue);
+    background: var(--bg-glass-hover);
+    box-shadow: var(--neon-glow);
 }
 
 .lead-favicon {
@@ -355,8 +430,9 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: var(--radius-sm);
     flex-shrink: 0;
     object-fit: contain;
-    background: rgba(0, 120, 255, 0.06);
+    background: rgba(59, 158, 255, 0.08);
     padding: 3px;
+    border: 1px solid rgba(59, 158, 255, 0.15);
 }
 
 .lead-favicon-fallback {
@@ -370,8 +446,8 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 0.72rem;
     font-weight: 700;
     color: #fff;
-    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-    box-shadow: 0 0 8px rgba(0, 120, 255, 0.2);
+    background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+    box-shadow: 0 0 8px rgba(59, 158, 255, 0.25);
 }
 
 .lead-info {
@@ -399,7 +475,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .lead-url {
     font-size: 0.72rem;
-    color: var(--accent-light);
+    color: var(--accent-blue-bright);
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
@@ -408,7 +484,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .lead-url:hover {
-    color: #66b3ff;
+    color: #80caff;
     text-decoration: underline;
 }
 
@@ -424,12 +500,12 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--text-muted);
 }
 
-/* Lead Actions */
+/* Lead Actions — more visible by default */
 .lead-actions {
     display: flex;
-    gap: 2px;
+    gap: 3px;
     flex-shrink: 0;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: opacity var(--transition-fast);
 }
 
@@ -438,13 +514,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .lead-action-btn {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--text-muted);
@@ -458,18 +534,21 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .lead-action-btn:hover {
-    background: rgba(0, 120, 255, 0.1);
-    color: var(--accent-light);
+    background: rgba(59, 158, 255, 0.12);
+    border-color: rgba(59, 158, 255, 0.25);
+    color: var(--accent-blue-bright);
 }
 
 .lead-action-btn.delete-lead-btn:hover {
-    background: var(--danger-glow);
+    background: var(--danger-bg);
+    border-color: var(--danger-border);
     color: var(--danger);
 }
 
 /* ---- Edit Mode ---- */
 .lead-item.editing {
-    border-color: var(--border-hover);
+    border-color: var(--accent-blue);
+    border-left-color: var(--accent-blue);
     box-shadow: var(--neon-glow);
 }
 
@@ -480,13 +559,13 @@ body::-webkit-scrollbar-thumb:hover {
     font-family: inherit;
     color: var(--text-primary);
     background: var(--bg-secondary);
-    border: 1px solid var(--border-hover);
+    border: 1.5px solid var(--border-hover);
     border-radius: 6px;
     outline: none;
 }
 
 .edit-input:focus {
-    border-color: var(--border-glow);
+    border-color: var(--accent-blue);
     box-shadow: var(--neon-glow);
 }
 
@@ -515,7 +594,7 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--text-muted);
     margin-bottom: 12px;
     opacity: 0.5;
-    filter: drop-shadow(0 0 6px rgba(0, 120, 255, 0.15));
+    filter: drop-shadow(0 0 6px rgba(59, 158, 255, 0.18));
 }
 
 .empty-title {
@@ -546,7 +625,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .action-bar .btn {
     flex: 1;
-    padding: 8px 14px;
+    padding: 9px 14px;
     font-size: 0.76rem;
 }
 
@@ -570,13 +649,13 @@ body::-webkit-scrollbar-thumb:hover {
 
 .modal {
     background: var(--bg-secondary);
-    border: 1px solid var(--border-hover);
+    border: 1.5px solid var(--border-hover);
     border-radius: var(--radius-xl);
     padding: 28px;
     max-width: 320px;
     width: 100%;
     text-align: center;
-    box-shadow: var(--neon-glow-strong);
+    box-shadow: var(--neon-glow-strong), var(--shadow-lg);
     animation: slideUp 0.3s ease;
 }
 
@@ -584,7 +663,8 @@ body::-webkit-scrollbar-thumb:hover {
     width: 48px;
     height: 48px;
     margin: 0 auto 14px;
-    background: var(--danger-glow);
+    background: var(--danger-bg);
+    border: 1.5px solid var(--danger-border);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -646,7 +726,7 @@ body::-webkit-scrollbar-thumb:hover {
     font-weight: 500;
     color: var(--text-primary);
     background: var(--bg-secondary);
-    border: 1px solid var(--border-subtle);
+    border: 1.5px solid var(--border-default);
     box-shadow: var(--shadow-md);
     animation: slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: auto;
@@ -655,7 +735,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .toast.success { border-left: 3px solid var(--success); }
 .toast.error   { border-left: 3px solid var(--danger); }
-.toast.info    { border-left: 3px solid var(--accent-light); }
+.toast.info    { border-left: 3px solid var(--accent-blue-bright); }
 .toast.warning { border-left: 3px solid var(--warning); }
 
 .toast-icon {
@@ -666,7 +746,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .toast.success .toast-icon { color: var(--success); }
 .toast.error   .toast-icon { color: var(--danger); }
-.toast.info    .toast-icon { color: var(--accent-light); }
+.toast.info    .toast-icon { color: var(--accent-blue-bright); }
 .toast.warning .toast-icon { color: var(--warning); }
 
 .toast.fade-out {
@@ -702,6 +782,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Focus-visible for accessibility */
 :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
 }
